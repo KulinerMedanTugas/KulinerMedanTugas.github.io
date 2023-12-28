@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
+    <title>Contact - Kuliner Medan</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to right, #b6ac73, #f4f4f4);
+            background: linear-gradient(to right, #e6d8ab, #f4f4f4);
             margin: 0;
             padding: 0;
         }
@@ -19,25 +19,26 @@
             font-weight: bold;
             height: 70px;
             width: 100%;
-            background: black;
+            background: #333;
             border-radius: 5px;
-            font-size: 18px;
+            font-size: 20px;
             position: fixed;
             top: 0;
             z-index: 1000;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         label {
             font-family: 'Pacifico', cursive;
-            font-size: 20pt;
-            color: rgb(247, 238, 238);
+            font-size: 24pt;
+            color: #000; /* Changed color to black */
             margin: 10px;
             padding: 5px;
             float: left;
         }
 
         .menu ul {
-            margin: 0px;
+            margin: 0;
             padding: 5px;
             background: none;
             display: flex;
@@ -47,56 +48,65 @@
 
         .menu ul li {
             list-style: none;
-            margin-right: 10px; /* Reduced margin */
+            margin-right: 10px;
         }
 
         .menu ul li a {
             text-decoration: none;
-            padding: 15px; /* Reduced padding */
-            color: #fbfbfb;
+            padding: 15px;
+            color: #fff;
             display: block;
         }
 
         .menu ul li:hover {
-            background: #141313;
+            background: #1a1a1a;
             box-shadow: inset 0px 0px 5px #000;
         }
 
         section {
-            margin: 20px 0;
-            margin-left: 0%;
-            margin-top: 70px;
+            margin: 20px 10%;
+            margin-top: 90px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         h2 {
             color: #333;
+            font-size: 32px;
         }
 
         p {
             color: #555;
+            font-size: 18px;
         }
 
         form {
             max-width: 400px;
-            margin: 20px;
+            margin: 20px auto;
             color: #141313;
         }
 
         input,
         textarea {
             width: 100%;
-            padding: 4px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 10px; /* Adjusted margin-bottom */
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
         }
 
         button {
             background-color: #4caf50;
-            color: rgb(33, 32, 32);
-            padding: 10px 15px;
+            color: #fff;
+            padding: 15px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-size: 18px;
         }
 
         button:hover {
@@ -109,6 +119,9 @@
             position: fixed;
             bottom: 0;
             width: 100%;
+            background: #333;
+            color: #fff;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
