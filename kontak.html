@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #b6ac73, #f4f4f4);
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            height: 70px;
+            width: 100%;
+            background: black;
+            border-radius: 5px;
+            font-size: 18px;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+
+        label {
+            font-family: 'Pacifico', cursive;
+            font-size: 20pt;
+            color: rgb(247, 238, 238);
+            margin: 10px;
+            padding: 5px;
+            float: left;
+        }
+
+        .menu ul {
+            margin: 0px;
+            padding: 5px;
+            background: none;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .menu ul li {
+            list-style: none;
+            margin-right: 10px; /* Reduced margin */
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            padding: 15px; /* Reduced padding */
+            color: #fbfbfb;
+            display: block;
+        }
+
+        .menu ul li:hover {
+            background: #141313;
+            box-shadow: inset 0px 0px 5px #000;
+        }
+
+        section {
+            margin: 20px 0;
+            margin-left: 0%;
+            margin-top: 70px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px;
+            color: #141313;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 4px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: rgb(33, 32, 32);
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="menu">
+        <label>Kuliner Medan</label>
+        <ul>
+            <li><a href="kuliner.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="makanan.html">Food Gallery</a></li>
+            <li><a href="minuman.html">Drink Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Informasi Kontak</h2>
+        <p>
+            Untuk pertanyaan lebih lanjut atau reservasi, silakan hubungi kami melalui formulir di bawah atau melalui informasi kontak di bawah ini:
+        </p>
+        <p>Email: info@kulinermedan.com</p>
+        <p>Telepon: (021) 123-4567</p>
+        <p>Alamat: Jl. Kuliner No. 123, Medan</p>
+    </section>
+
+    <section>
+        <h2>Formulir Kontak</h2>
+        <form onsubmit="return validateForm()">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Kirim Pesan</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Kuliner Medan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+
+            if (name === "" || email === "") {
+                alert("Nama dan Email harus diisi!");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
