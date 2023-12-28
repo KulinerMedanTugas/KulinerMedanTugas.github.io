@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pemesanan Makanan</title>
+</head>
+<body>
+   
+    <header>
+        <h1>Restoran XYZ</h1>
+    </header>
+    <main>
+        <section id="menu">
+            <h2>Menu</h2>
+            <!-- Daftar menu -->
+            <div class="menu-item" data-id="1">
+                <h3>Nasi Goreng</h3>
+                <p>Harga: $10.00</p>
+                <button class="order-btn">Pesan</button>
+            </div>
+            <div class="menu-item" data-id="2">
+                <h3>Mie Goreng</h3>
+                <p>Harga: $8.00</p>
+                <button class="order-btn">Pesan</button>
+            </div>
+            <!-- Tambahkan lebih banyak item menu jika diperlukan -->
+        </section>
+        <section id="cart">
+            <h2>Keranjang</h2>
+            <ul id="cart-items">
+                <!-- Daftar item di keranjang -->
+            </ul>
+            <p id="total">Total: $0.00</p>
+            <button id="checkout-btn">Checkout</button>
+        </section>
+    </main>
+    <script src="app.js">
+        document.addEventListener('DOMContentLoaded', function () {
+    const menuItems = document.querySelectorAll('.menu-item');
+    const cart = document.getElementById('cart-items');
+    const totalElement = document.getElementById('total');
+    let total = 0;
+
+    menuItems.forEach(item => {
+        const orderButton = item.querySelector('.order-btn');
+        orderButton.addEventListener('click', () => {
+            const itemId = item.getAttribute('data-id');
+            const itemName = item.querySelector('h3').textContent;
+            const itemPrice = parseFloat(item.querySelector('p').textContent.replace('Harga: $', ''));
+            addToCart(itemId, itemName, itemPrice);
+        });
+    });
+
+    function addToCart(id, name, price) {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `${name} - $${price.toFixed(2)} <button class="remove-btn">Hapus</button>`;
+        cart.appendChild(listItem);
+        total += price;
+        totalElement.textContent = `Total: $${total.toFixed(2)}`;
+
+        const removeButton = listItem.querySelector('.remove-btn');
+        removeButton.addEventListener('click', () => {
+            listItem.remove();
+            total -= price;
+            totalElement.textContent = `Total: $${total.toFixed(2)}`;
+        });
+    }
+
+    const checkoutButton = document.getElementById('checkout-btn');
+    checkoutButton.addEventListener('click', () => {
+        alert(`Terima kasih! Total pembayaran Anda: $${total.toFixed(2)}`);
+        // Proses pembayaran atau tindakan lainnya dapat ditambahkan di sini.
+        // Anda juga dapat mengirim pesanan ke server untuk diproses.
+        // Misalnya, menggunakan AJAX atau Fetch API.
+        resetCart();
+    });
+
+    function resetCart() {
+        cart.innerHTML = '';
+        total = 0;
+        totalElement.textContent = 'Total: $0.00';
+    }
+});
+
+    </script>
+</body>
+</html>
